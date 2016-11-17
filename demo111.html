@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#div1{
+		display: block;
+		background: #000;
+		margin: 0px 5px;
+		float: left;
+		position: relative;
+		overflow: hidden;
+	}
+	.aaaaa{
+		position: absolute;
+		right: 0;
+		color: #fff;
+		display: none;
+	}
+	.wangxing{
+		width: 100px;
+		height: 100px;
+		float: left;
+		margin: 0 5px;
+	}
+	div:hover span{
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+	<input type="button" value="gesijia" id ="btn">
+	<script type="text/javascript">
+	var oBtn = document.getElementById('btn')
+
+	oBtn.onclick = function () {
+		var a = document.createElement('div');
+		var b = document.createElement('span');
+		a.className = "wangxing";
+		b.className="aaaaa";
+		b.innerText = 'aaa';
+		a.appendChild(b);
+		div1.appendChild(a);
+		b.onclick = function () {
+			this.parentNode.parentNode.removeChild(this.parentNode);
+		}
+	}
+	</script>
+</body>
+</html>
